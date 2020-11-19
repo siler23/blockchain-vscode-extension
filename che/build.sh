@@ -35,8 +35,8 @@ cat package.json.orig \
     > package.json
 rm -rf ./node_modules/grpc/src/node/extension_binary/*
 rm -rf ./node_modules/pkcs11js/build/Release/*
-npm rebuild grpc --update-binary --runtime=node --target=10.0.0 --target_platform=linux --target_arch=s390x --target_libc=musl
-npm rebuild grpc --update-binary --runtime=node --target=10.0.0 --target_platform=linux --target_arch=s390x --target_libc=glibc
+npm rebuild grpc --update-binary --runtime=node --target=12.18.4 --target_platform=linux --target_arch=s390x --target_libc=musl
+npm rebuild grpc --update-binary --runtime=node --target=12.18.4 --target_platform=linux --target_arch=s390x --target_libc=glibc
 npm run package
 cd ${ROOT}
 export VERSION=$(jq -r .version lerna.json)
